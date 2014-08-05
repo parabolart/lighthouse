@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fixed position block</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta name="description" content="Fixed position block" />
+		<meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../freewall.js"></script>
+		<style type="text/css">
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.layout {
+				max-width: 920px; /* 300 610 765*/
+				padding: 50px 10px;
+				margin: 0 auto;
+			}
+			
+			.free-wall {
+			}
+			
+			.brick.centro .cover {
+				position:relative;
+				overflow:hidden;
+				vertical-align:middle;
+				background-repeat:no-repeat;
+				background-color:transparent;
+				background-position: center center;
+				background-size: 130% 130%;
+				-webkit-transition: background-size .5s ease;
+				-moz-transition: background-size .5s ease;
+				-o-transition: background-size .5s ease;
+				-ms-transition: background-size .5s ease;
+				transition: background-size .5s ease;
+				height:100%;
+				border-radius: 15px;
+			}
+			
+			.intext {
+				position: absolute;
+				top:35%;
+				width: 100%;
+			}
+			
+			.brick.centro .cover:hover {
+				background-size: 100% 100%;
+			}
+			
+			.menu {
+				background: #0e0b0c; /*#403c3d;*/
+			}
+			
+			.sizeMNU {
+				background-image: url("images/MNU3.png");
+			}
+
+			.filter-items {
+				padding: 10px 0px;
+			}
+
+			.filter-label {
+				display: inline-block;
+				cursor: pointer;
+				background: rgb(205, 149, 12);
+			}
+
+			.filter-label.active,
+			.filter-label:hover {
+				background: rgb(238, 180, 34);
+			}
+			
+			ul.testmenulist {
+				margin:0;
+				padding:0;
+				list-style-type:none;
+				display:block;
+				width:145px;
+				line-height:43px;
+				text-align: left;
+			}
+			
+			ul.testmenulist li {
+				margin:0;
+				padding:0;
+			}
+			
+			ul.testmenulist li a {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				padding:0 0 0 10px;
+				background: url('images/MNU.png');
+				margin-bottom: 2px;
+			}
+			
+			ul.testmenulist li a:hover {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				padding:0 0 0 10px;
+				background: url('images/MNU3.png');
+			}
+			
+			.menu ul {
+				margin:0;
+				padding:0;
+				list-style-type:none;
+				display:block;
+				width:300px;
+				line-height:160%;
+				text-align: left;
+			}
+			
+			.menu ul.menulist li {
+				margin:0;
+				padding:0;
+				border-top:1px solid #000;
+				border-bottom:1px solid #2e2b2c;
+			}
+			
+			.menu ul.menulist li a {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				color:#858182;
+				background:#1a1617;
+				padding:0 0 0 20px;
+			}
+			
+			.menu ul.menulist li a:hover {
+				background: #0e0b0c;
+			}
+			
+			.menu ul.submenulist li a {
+				display:block;
+				text-decoration:none;
+				color:#858182;
+				background:#1a1617;
+				padding:0 0 0 40px;
+			}
+			
+			.size33 {
+				background: #fff;
+				color: #000;
+			}
+
+		</style>
+	</head>
+<body>
+		<div class="layout">
+            <div id="freewall" class="free-wall">
+			<div class="brick size22 centro intro" data-position="0-1">
+				<div class='cover' style='background-image: url("images/0-1.png");'>
+					<div class='intext'>
+						<h2>Lighthouse</h2>
+						<p>Sail any sea</p>
+						<p>With this shining light</p>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size33 content toefl lap opic bulats toic ielts opi" data-position="0-0">
+				<div class='cover'>
+					<div class='intext'>
+						<h2>Training Information</h2>
+						<p>text</p>
+						<p>text text</p>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro toefl">
+				<div class='cover' data-filter=".toefl" style='background-image: url("images/0-0.png");'>
+					<div class='intext'>
+						<h2>TOEFL</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro ielts">
+				<div class='cover' data-filter=".ielts" style='background-image: url("images/0-3.png");'>
+					<div class='intext'>
+						<h2>IELTS</h2>
+					</div>	
+				</div>	
+			</div>
+			<div class="brick size11 centro intro lap">
+				<div class='cover' data-filter=".lap" style='background-image: url("images/1-0.png");'>
+					<div class='intext'>
+						<h2>LAP</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro bulats">
+				<div class='cover' data-filter=".bulats" style='background-image: url("images/1-3.png");'>
+					<div class='intext'>
+						<h2>BULATS</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro opi">
+				<div class='cover' data-filter=".opi" style='background-image: url("images/2-0.png");'>
+					<div class='intext'>
+						<h2>OPI</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro opic">
+				<div class='cover' data-filter=".opic" style='background-image: url("images/2-1.png");'>
+					<div class='intext'>
+						<h2>OPIC</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick size11 centro intro toic">
+				<div class='cover' data-filter=".toic" style='background-image: url("images/2-2.png");'>
+					<div class='intext'>
+						<h2>TOIC</h2>
+					</div>
+				</div>	
+			</div>
+			<div class="brick sizeSM centro intro">
+				<div class='cover' style='background-image: url("images/2-3.png");'>
+					<div class='intext'>
+						Contact
+					</div>
+				</div>	
+			</div>
+			<div class="brick sizeSM centro intro">
+				<div class='cover' style='background-image: url("images/3-3.png");'>
+					<div class='intext'>
+						Books
+					</div>
+				</div>	
+			</div>
+			<div class="brick sizeMNU content toefl lap opic bulats toic ielts opi">
+				<div class='m'>
+					<ul class="testmenulist">
+						<li><a href="#">Book Description</a></li>
+						<li><a href="#">Author Bio</a></li>
+						<li><a href="#">Online Lessons</a></li>
+						<li><a href="#">Book Download</a></li>
+						<li><a href="#">Trial Lessons</a></li>
+					</ul>
+				</div>	
+			</div>
+			<div class="brick sizeSM centro content toefl lap opic bulats toic ielts opi">
+				<div class='cover' style='background-image: url("images/SIGNUP.png");'>
+					<div class='intext'>
+						SIGN UP!
+					</div>
+				</div>	
+			</div>
+			<div class="brick size23 menu intro toefl lap opic bulats toic ielts opi contact books" data-position="0-4">
+				<div class='m'>
+					<ul class="menulist">
+					  <li><a class="cover" data-filter=".intro">Home</a></li>
+					  <li><a href="#">About</a></li>
+					  <li><a href="#">Tests</a></li>
+						<ul class="submenulist">
+							<li><a class="cover" data-filter=".bulats">BULATS</a></li>
+							<li><a class="cover" data-filter=".toefl">TOEFL</a></li>
+							<li><a class="cover" data-filter=".toic">TOIC</a></li>
+							<li><a class="cover" data-filter=".opic">OPIC</a></li>
+							<li><a class="cover" data-filter=".opi">OPI</a></li>
+							<li><a class="cover" data-filter=".lap">LAP</a></li>
+							<li><a class="cover" data-filter=".ielts">IELTS</a></li>
+						</ul>
+					  <li><a href="#">Books</a></li>
+					  <li><a href="#">Contact</a></li>
+					  <li><a href="#">Sign Up!</a></li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		</div>
+
+		<script type="text/javascript">
+			
+			$(function() {
+				var wall = new freewall("#freewall");
+				wall.reset({
+					selector: '.brick',
+					animate: true,
+					gutterX: 10,
+					gutterY: 10,
+					cellW: 150,
+					cellH: 75,
+					fixSize: 0,
+					onResize: function() {
+						wall.refresh();
+					}
+				});
+                
+				wall.filter(".intro");
+				$(".cover").click(function() {
+					$(".cover").removeClass("active");
+					var filter = $(this).addClass('active').data('filter');
+					if (filter) {
+						wall.filter(filter);
+					} else {
+						wall.unFilter();
+					}
+				});
+
+				wall.fitWidth();
+                
+			});
+		</script>
+	</body>
+
+</html>

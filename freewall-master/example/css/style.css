@@ -36,7 +36,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	background: rgba(231, 231, 231, 0.43);
+	background: #fffffe; /*#231f20   003d66;*/
 	line-height: 1.125em;
 	color: white;
 	max-width: 1920px;
@@ -81,7 +81,7 @@ a {
 }
 a:hover {
 	color: white;
-	opacity: 0.9;
+	/*opacity: 0.9;*/
 }
 a:visited {
 	color: white;
@@ -223,39 +223,49 @@ table {
 	height: 80px;
 }
 
+.sizeSM {
+	height: 67.5px;
+	width: 145px;
+}
+
+.sizeMNU {
+	height:212.5px;
+	width: 145px;
+}
+
 .size11 {
-	height: 160px;
-	width: 160px;
+	height: 145px;
+	width: 145px;
 }
 
 .size12 {
-	width: 160px;
-	height: 320px;
+	width: 145px;
+	height: 300px;
 }
 
 .size21 {
-	width: 320px;
-	height: 160px;
+	width: 300px;
+	height: 150px;
 }
 
 .size22 {
-	height: 330px;
-	width: 330px;
+	height: 300px;
+	width: 300px;
 }
 
 .size13 {
-	width: 160px;
-	height: 480px;
+	width: 145px;
+	height: 455px;
 }
 
 .size31 {
-	width: 480px;
-	height: 160px;
+	width: 350px;
+	height: 145px;
 }
 
 .size23 {
-	width: 320px;
-	height: 480px;
+	width: 300px;
+	height: 455px;
 }
 
 .size24 {
@@ -269,8 +279,8 @@ table {
 }
 
 .size33 {
-	width: 480px;
-	height: 480px;
+	width: 455px;
+	height: 455px;
 }
 
 .size34 {
@@ -379,18 +389,27 @@ table {
 }
 
 .brick {
-	background-color: white;
 	float: left;
-	cursor: default;
 	overflow: hidden;
 	background-repeat: no-repeat;
-	background-size: cover;
+	/*background-size: cover;*/
 	background-position: center;
+	text-align: center;
 }
 
-.brick .cover {
+.brick.size11 .cover {
+	text-align:center;
 	overflow: hidden;
-	margin: 20px;
+}
+
+.brick.size75 .cover {
+	text-align:center;
+	overflow: hidden;
+}
+
+.brick.size22 .cover {
+	text-align:center;
+	overflow: hidden;
 }
 
 .brick .read-more {
