@@ -60,7 +60,7 @@
 			}
 			
 			.brick.centro .cover:hover {
-				background-size: 95% 95%;
+				background-size: 93% 93%;
 				border: 20px;
 			}
 			
@@ -223,6 +223,7 @@
 			#form-submit {
 				background: url('images/button_search.png') no-repeat scroll 0px 0px transparent;
 				height: 20px;
+				width: 20px;
 				float:right;
 				display:block;
 				margin-top:-1px;
@@ -388,8 +389,8 @@
 				<img src="images/lighthouse_logo_sm.png" id="smlogo">
 				<ul id="headbar">
 					<li>
-						<input onfocus="if (this.value == 'SEARCH') {this.value = '';}" onblur="if (this.value == '') {this.value = 'SEARCH'}" id="search-form" name="search_block_form" value="SEARCH" size="60" maxlength="128" class="form-text" type="text">
 						<input id="form-submit" name="op" value="" type="submit">
+						<input onfocus="if (this.value == 'SEARCH') {this.value = '';}" onblur="if (this.value == '') {this.value = 'SEARCH'}" id="search-form" name="search_block_form" value="SEARCH" size="60" maxlength="128" class="form-text" type="text">
 					</li>
 					<li>
 						<a href="#">LOGIN »</a>
@@ -454,17 +455,10 @@
 			</ul>
 			<br><br><br>
 			<div id="freewall" class="free-wall">
-				<div class="brick size11 intro">
-					<div class='cover' style='background-image: url("images/stock1.jpg");'>
-						<div class='intext'>
-							<h2></h2>
-						</div>
-					</div>
-				</div>
 				<div class="brick size11 centro intro toefl">
 					<div class='cover' style='background-image: url("images/toefl.jpg");'>
 						<div class=''>
-							<a href="#"><span class="linka"></span></a>
+							<a href="toefl.html"><span class="linka"></span></a>
 						</div>
 					</div>
 				</div>
@@ -475,10 +469,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="brick size11 centro intro opi">
-					<div class='cover' data-filter=".opi" style='background-image: url("images/opi.jpg");'>
+				<div class="brick size11 intro centro sat">
+					<div class='cover' style='background-image: url("images/sat.jpg");'>
 						<div class=''>
-							<a href="#"><span class="linka"></span></a>
+							<a href="sat.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro ielts">
+					<div class='cover' data-filter=".ielts" style='background-image: url("images/ielts.jpg");'>
+						<div class=''>
+							<a href="ielts.html"><span class="linka"></span></a>
 						</div>
 					</div>
 				</div>
@@ -504,23 +505,9 @@
 					</div>
 				</div>
 				<div class="brick size11 intro">
-					<div class='cover' style='background-image: url("images/stock6.jpg");'>
+					<div class='cover' style='background-image: url("images/stock1.jpg");'>
 						<div class='intext'>
 							<h2></h2>
-						</div>
-					</div>
-				</div>
-				<div class="brick size11 intro">
-					<div class='cover' style='background-image: url("images/stock7.jpg");'>
-						<div class='intext'>
-							<h2></h2>
-						</div>
-					</div>
-				</div>
-				<div class="brick size11 centro intro opic">
-					<div class='cover' style='background-image: url("images/opic.jpg");'>
-						<div class=''>
-							<a href="#"><span class="linka"></span></a>
 						</div>
 					</div>
 				</div>
@@ -531,17 +518,31 @@
 						</div>
 					</div>
 				</div>
-				<div class="brick size11 centro intro ielts">
-					<div class='cover' data-filter=".ielts" style='background-image: url("images/ielts.jpg");'>
+				<div class="brick size11 centro intro opi">
+					<div class='cover' style='background-image: url("images/opi.jpg");'>
 						<div class=''>
-							<a href="#"><span class="linka"></span></a>
+							<a href="opi.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock7.jpg");'>
+						<div class='intext'>
+							<h2></h2>
 						</div>
 					</div>
 				</div>
 				<div class="brick size11 centro intro bulats">
-					<div class='cover' data-filter=".bulats" style='background-image: url("images/bulats.jpg");'>
+					<div class='cover' style='background-image: url("images/bulats.jpg");'>
 						<div class=''>
-							<a href="#"><span class="linka"></span></a>
+							<a href="bulats.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro toeic">
+					<div class='cover' data-filter=".toeic" style='background-image: url("images/toeic.jpg");'>
+						<div class=''>
+							<a href="toeic.html"><span class="linka"></span></a>
 						</div>
 					</div>
 				</div>
@@ -552,10 +553,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="brick size11 centro intro toeic">
-					<div class='cover' data-filter=".toeic" style='background-image: url("images/toeic.jpg");'>
+				<div class="brick size11 centro intro opic">
+					<div class='cover' data-filter=".opic" style='background-image: url("images/opic.jpg");'>
 						<div class=''>
-							<a href="#"><span class="linka"></span></a>
+							<a href="opic.html"><span class="linka"></span></a>
 						</div>
 					</div>
 				</div>
@@ -567,15 +568,15 @@
 					</div>
 				</div>
 				<div class="brick size11 intro">
-					<div class='cover' style='background-image: url("images/stock5.jpg");'>
+					<div class='cover' style='background-image: url("images/stock11.jpg");'>
 						<div class='intext'>
 							<h2></h2>
 						</div>
 					</div>
 				</div>
 				<div class="brick size11 intro">
-					<div class='cover' style='background-image: url("images/stock11.jpg");'>
-						<div class='intext'>
+					<div class='cover' style='background-image: url("images/stock6.jpg");'>
+						<div class=''>
 							<h2></h2>
 						</div>
 					</div>
@@ -587,8 +588,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="brick size21 intro opic">
-					<div class='cover' data-filter=".opic" style='background-image: url("images/stock12.jpg");'>
+				<div class="brick size21 intro">
+					<div class='cover' style='background-image: url("images/stock12.jpg");'>
 						<div class='intext'>
 							<h2></h2>
 						</div>
