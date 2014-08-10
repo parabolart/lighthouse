@@ -61,7 +61,7 @@ h1 {
 }
 h2 {
 	font-size: 1.6em;
-	line-height: 1em;
+	line-height: 25px;
 }
 h3 {
 	font-size: 1.25em;
@@ -577,4 +577,8 @@ table {
 #footer-nav a:hover{
 	color:#888;
 	text-decoration: none !important;
+}
+
+div.spacing {
+	height: 70px;
 }
