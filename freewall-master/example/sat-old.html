@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fixed position block</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta name="description" content="Fixed position block" />
+		<meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../freewall.js"></script>
+		<style type="text/css">
+			html, body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.layout {
+				width: 920px; /* 300 610 765*/
+				/* min-width: 276px; */
+				padding-top: 48px;
+				margin: 0 auto;
+			}
+			
+			.free-wall {
+			}
+			
+			.brick .cover {
+				position:relative;
+				overflow:hidden;
+				background-repeat:no-repeat;
+				background-color:transparent;
+				background-position: center center;
+				background-size: 100% 100%;
+				height:100%;
+			}
+			
+			.brick.centro .cover {
+				position:relative;
+				overflow:hidden;
+				vertical-align:middle;
+				background-repeat:no-repeat;
+				background-color:transparent;
+				background-position: center center;
+				background-size: 102% 102%;
+				-webkit-transition: background-size .15s ease;
+				-moz-transition: background-size .15s ease;
+				-o-transition: background-size .15s ease;
+				-ms-transition: background-size .15s ease;
+				transition: background-size .15s ease;
+				height:100%;
+				border-radius: 0px;
+			}
+			
+			.intext {
+				position: absolute;
+				top:35%;
+				width: 100%;
+			}
+			
+			.brick.centro .cover:hover {
+				background-size: 95% 95%;
+				border: 20px;
+			}
+			
+			.sizeMNU {
+				background-image: url("images/MNU3.png");
+			}
+			.filter-items {
+				padding: 10px 0px;
+			}
+			.filter-label {
+				display: inline-block;
+				cursor: pointer;
+				background: rgb(205, 149, 12);
+			}
+			.filter-label.active,
+			.filter-label:hover {
+				background: rgb(238, 180, 34);
+			}
+			
+			/*
+			.menu {
+				background: #0e0b0c; #403c3d;
+			}
+			
+			ul.testmenulist {
+				margin:0;
+				padding:0;
+				list-style-type:none;
+				display:block;
+				width:145px;
+				line-height:43px;
+				text-align: left;
+			}
+			
+			ul.testmenulist li {
+				margin:0;
+				padding:0;
+			}
+			
+			ul.testmenulist li a {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				padding:0 0 0 10px;
+				background: url('images/MNU.png');
+				margin-bottom: 2px;
+			}
+			
+			ul.testmenulist li a:hover {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				padding:0 0 0 10px;
+				background: url('images/MNU3.png');
+			}
+			
+			.menu ul {
+				margin:0;
+				padding:0;
+				list-style-type:none;
+				display:block;
+				width:300px;
+				line-height:160%;
+				text-align: left;
+			}
+			
+			.menu ul.menulist li {
+				margin:0;
+				padding:0;
+				border-top:1px solid #000;
+				border-bottom:1px solid #2e2b2c;
+			}
+			
+			.menu ul.menulist li a {
+				font-size:14px;
+				display:block;
+				text-decoration:none;
+				color:#858182;
+				background:#1a1617;
+				padding:0 0 0 20px;
+			}
+			
+			.menu ul.menulist li a:hover {
+				background: #0e0b0c;
+			}
+			
+			.menu ul.submenulist li a {
+				display:block;
+				text-decoration:none;
+				color:#858182;
+				background:#1a1617;
+				padding:0 0 0 40px;
+			}
+			*/
+			
+			.size33 {
+				background: #fff;
+				color: #000;
+			}
+			
+			.sizeVIDEO {
+				background: #218ef7;
+				color: #fff;
+			}
+			
+			.sizeVIDEO .vcover {
+				padding-top:4px;
+			}
+			
+			.sizeINFOL {
+				background: #218ef7;
+				color: #fff;
+			}
+			
+			.header {
+				height: 28px;
+				background-color: #218ef7;
+				color: #fff;
+				font-size: 12px;
+				position: fixed;
+				top:0;
+				width: 100%;
+				z-index: 9999;
+				box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+				-moz-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+				-webkit-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+			}
+
+			.header a {
+				color: #fff;
+			}
+			
+			.header div {
+				width: 920px;
+				margin: 0 auto;
+				/*text-align: right;*/
+			}
+			#headbar {
+				list-style:none;
+				/*font-weight:bold;*/
+				/* Clear floats */
+				float:right;
+				position:relative;
+				padding:5px 0;
+			}
+			
+			#headbar li {
+				float: right;
+				margin:0 0 0 30px;
+			}
+			#search-form {
+				font: 12px 'Lato';
+				background: #1D80E2;
+				border: medium none;
+				display: inline-block;
+				width: 125px;
+				height: 20px;
+				cursor: pointer;
+				color: #fff;
+				padding: 0 8px;
+				margin-top:-2px;
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4) inset;
+			}
+			#form-submit {
+				background: url('images/button_search2.png') no-repeat scroll 0px 0px transparent;
+				height: 20px;
+				width: 20px;
+				float:right;
+				display:block;
+				margin-top:-1px;
+				border:0 !important;
+				cursor: pointer;
+			}
+			#logo {
+				margin-bottom: 10px;
+				width:920px;
+			}
+			#smlogo {
+				float:left;
+				/*visibility: hidden;*/
+			}
+			
+			/* --------- MAIN STUFF --------- */
+			#maincontainer {
+				width: 920px; /*Width of main container*/
+				margin: 0 auto; /*Center container on page*/
+				font-size:13px;
+			}
+			
+			#maincontainer div {
+				line-height: 21px;
+			}
+			
+			#maincontainer a {
+				color: #0051b5;
+			}
+			#maincontainer a:hover, #maincontainer a:visited {
+				text-decoration: underline;
+			}
+			#topsection {
+				height: 44px; /*Height of top section*/
+				border-bottom: 1px solid #ddd;
+			}
+			#topsection h1 {
+				margin: 0;
+				padding-top: 15px;
+			}
+			#contentwrapper {
+				float: left;
+				width: 100%;
+			}
+			#contentcolumn {
+				margin: 0 230px 0 345px;
+				height: 600px;
+			}
+			#leftcolumn {
+				float: left;
+				width: 345px;
+				height: 600px;
+				margin-left: -920px;
+				background-color: #eee;
+			}
+			#rightcolumn {
+				float: left;
+				width: 230px;
+				height: 600px;
+				margin-left: -230px;
+				background-color: #eee;
+			}
+			#footer {
+				clear: left;
+				width: 100%;
+				height: 50px;
+				background: #444;
+				text-align: center;
+				padding: 10px 0;
+				color: #fff;
+				font-size: 12px;
+			}
+			.innertube {
+				margin: 20px; /*Margins for inner DIV inside each column (to provide padding)*/
+			}
+			
+			#maincontainer h2 {
+				font-size: 18px;
+				font-weight: bold;
+				padding-bottom: 20px;
+				margin-bottom: 24px;
+			}
+			
+			#contentcolumn h2 {
+				border-bottom: 2px solid #eee;
+			}
+			
+			#leftcolumn h2, #rightcolumn h2 {
+				border-bottom: 2px solid #fff;
+			}
+			
+			#maincontainer li {
+				list-style:none;
+				padding: 0 0 20px 0;
+			}
+			
+			#booklist div.calendar-date {
+				display:inline-block;
+				width: 20px;
+				vertical-align: top;
+				padding-right: 10px;
+				border-right: 2px solid #fff;
+			}
+			
+			#booklist div.calendar-info {
+				width: 270px;
+				display: inline-block;
+				text-align: right;
+				vertical-align: top;
+			}
+
+			#grammarlist div.calendar-date {
+				display:inline-block;
+				width: 20px;
+				vertical-align: top;
+				padding-right: 10px;
+				border-right: 2px solid #eee;
+			}
+			
+			#grammarlist div.calendar-info {
+				width: 270px;
+				display: inline-block;
+				text-align: right;
+				vertical-align: top;
+			}
+			
+			.news-title {
+				font-weight: bold;
+				padding-bottom: 5px;
+			}
+			.news-image {
+				display:block;
+				width: 190px
+				vertical-align:top;
+				background: url('images/video_overlay.png') no-repeat top right;
+			}
+			.news-image a {
+				-webkit-transition: opacity .3s ease;
+				-moz-transition: opacity .3s ease;
+				-o-transition: opacity .3s ease;
+				-ms-transition: opacity .3s ease;
+				transition: opacity .3s ease;
+				opacity: 1.0;
+			}
+			.news-image a:hover {
+				opacity: .3;
+			}
+			.video {
+				
+				position: absolute;
+			}
+			.sizeINFOL p {
+				font-size: 12px;
+				line-height: 14px;
+				padding-top: 10px;
+			}
+			.tcover {
+				padding: 10px 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div>
+				<a href="index.html"><img src="images/lighthouse_logo_sm.png" id="smlogo"></a>
+				<ul id="headbar">
+					<li>
+						<input id="form-submit" name="op" value="" type="submit">
+						<input onfocus="if (this.value == 'SEARCH') {this.value = '';}" onblur="if (this.value == '') {this.value = 'SEARCH'}" id="search-form" name="search_block_form" value="SEARCH" size="60" maxlength="128" class="form-text" type="text">
+					</li>
+					<li>
+						<a href="#">LOGIN »</a>
+					</li>
+					<li>
+						<a href="#">REGISTER</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="layout">
+			<div id="logo">
+				<img src="images/social_buttons.png" style="float:right; margin-top: 35px">
+				<img src="images/sat_logo.png">
+			</div>
+			<ul id="nav">
+				<li>
+					<a href="index.html">HOME</a>
+					
+				</li>
+				<li>
+					<a href="#">LESSONS</a>
+					<ul>
+						<li><a href="#">L1 - LAP Outline</a></li>
+						<li><a href="#">L2 - LAP Procedure</a></li>
+						<li><a href="#">L3 - Big Five</a></li>
+						<li><a href="#">L4 - Yourself</a></li>
+						<li><a href="#">L5 - Family</a></li>
+						<li><a href="#">L6 - Hometown</a></li>
+						<li><a href="#">L7 - SOB</a></li>
+						<li><a href="#">L8 - Hobby</a></li>
+						<li><a href="#">L9 - Rejoinders</a></li>
+						<li><a href="#">L10 - P.R.E.P</a></li>
+						<li><a href="#">L11 - Guiding</a></li>
+						<li><a href="#">L12 - Related Topics</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">CLASSES</a>
+					<ul>
+						<li><a href="#">Intensive English Speaking</a></li>
+						<li><a href="#">Business English</a></li>
+						<li><a href="#">Advanced Business Training</a></li>
+						<li><a href="#">Global Expo Staff Preparation</a></li>
+						<li><a href="#">More »</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">INTENSIVE PROGRAMS</a>
+					<ul>
+						<li><a href="#">Presentation Essentials</a></li>
+						<li><a href="#">Meeting &amp; Negotiation</a></li>
+						<li><a href="#">Correspondence</a></li>
+						<li><a href="#">Leadership</a></li>
+						<li><a href="#">Team Building</a></li>
+						<li><a href="#">Culture Training</a></li>
+						<li><a href="#">More »</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">QUESTIONS</a>
+				</li>
+				<li>
+					<a href="#">TESTING</a>
+				</li>
+			</ul>
+			<br><br><br>
+			<div id="freewall" class="free-wall">
+				<div class="brick sizeINFOL intro">
+					<div class='tcover'>
+						
+							<h2><b>What is LAP?</b></h2>
+							<p>The Language Assessment Profile interview is usually called the LAP Test. It is a procedure that measures a person’s functional speaking ability by determining an individual’s strengths and weaknesses. The interview tests a trainee’s ability to use the English language effectively in real life situations.  <br><br>
+							The LAP Test is a 20 minute recorded test. It takes place in a private room with a certified examiner. The LAP Test has 4 parts; the warm-up, the level check, the probes and the cool-down. The scores range from 1-6, 1 being a novice-low score, and 6 being a native speaker’s level. The requirement at LG is 3.5, a intermediate-high score, and 4.0 is the most desired score and one of the most difficult scores to reach.</p>
+						
+					</div>
+				</div>
+				<div class="brick sizeVIDEO video intro">
+					<div class="vcover">
+						<object width="640" height="360">
+						<!-- See: value="http://.. -->
+						<param name="movie" value="//www.youtube.com/v/nXQOXYy8Cv8?hl=en_US&amp;version=3&amp;rel=0&amp;theme=light&amp;color=white"></param>
+						<param name="allowFullScreen" value="true"></param>
+						<param name="allowscriptaccess" value="always"></param>
+						<param name="wmode" value="opaque"></param>
+						<!-- See: src="http://.. -->
+						<embed src="http://www.youtube.com/v/nXQOXYy8Cv8?hl=en_US&amp;version=3&amp;rel=0&amp;theme=light&amp;color=white" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true" wmode="opaque"></embed>
+						</object>
+					</div>
+				</div>
+			</div>
+			<div id="maincontainer">
+				<div id="topsection">&nbsp;</div>
+				<div id="contentwrapper">
+					<div id="contentcolumn">
+						<div class="innertube"><h2>LAP Grammar</h2>
+							<ul id="grammarlist">
+								<li>
+									<div class="calendar-date">
+										L1
+									</div>
+									<div class="calendar-info">
+										Present
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L2
+									</div>
+									<div class="calendar-info">
+										Past
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L3
+									</div>
+									<div class="calendar-info">
+										Future
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L4
+									</div>
+									<div class="calendar-info">
+										Present Continuous
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L5
+									</div>
+									<div class="calendar-info">
+										Past Continuous
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L6
+									</div>
+									<div class="calendar-info">
+										Present Perfect
+									</div>
+								</li>
+							</ul>
+							<br><a href="#">More Grammar »</a>
+						</div>
+					</div>
+				</div>
+				<div id="leftcolumn">
+					<div class="innertube"><h2>Book Contents</h2>
+						<ul id="booklist">
+								<li>
+									<div class="calendar-date">
+										L1
+									</div>
+									<div class="calendar-info">
+										LAP OVERVIEW
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L2
+									</div>
+									<div class="calendar-info">
+										LAP STRUCTURE
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L3
+									</div>
+									<div class="calendar-info">
+										LAP DO'S &amp; DONT'S
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L4
+									</div>
+									<div class="calendar-info">
+										THE WARM UP
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L5
+									</div>
+									<div class="calendar-info">
+										THE LEVEL CHECK
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L6
+									</div>
+									<div class="calendar-info">
+										THE PROBES
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L8
+									</div>
+									<div class="calendar-info">
+										RESPONDING TO QUESTIONS
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L9
+									</div>
+									<div class="calendar-info">
+										CLARIFYING
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L10
+									</div>
+									<div class="calendar-info">
+										SHORT ANSWER
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L11
+									</div>
+									<div class="calendar-info">
+										ORGANIZING
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										L12
+									</div>
+									<div class="calendar-info">
+										SAMPLE TESTS AND ANSWERS
+									</div>
+								</li>
+							</ul>
+							<br><a href="#">More Info »</a>
+					</div>
+				</div>
+				<div id="rightcolumn">
+					<div class="innertube"><h2>Related Videos</h2>
+						<ul id="news">
+							<li>
+								<div class="news-title">
+									Email Writing
+								</div>
+								<div class="news-image">
+									<a href="#"><img src="images/relvid_email.jpg"></a>
+								</div>
+							</li>
+							<li>
+								<div class="news-title">
+									Business Presentation
+								</div>
+								<div class="news-image">
+									<a href="#"><img src="images/relvid_presentation.jpg"></a>
+								</div>
+							</li>
+							<li>
+								<div class="news-title">
+									Telephoning
+								</div>
+								<div class="news-image">
+									<a href="#"><img src="images/relvid_telephoning.jpg"></a>
+								</div>
+							</li>
+						</ul>
+						<a href="#">More Videos »</a>
+					</div>
+				</div>
+				<div id="footer">
+					© 2014 Lighthouse Consulting. 
+					<ul id="footer-nav">
+						<li>
+							<a href="#">ABOUT</a>
+							
+						</li>
+						<li>
+							<a href="#">PROGRAMS</a>
+						</li>
+						<li>
+							<a href="#">WORKSHOPS</a>
+						</li>
+						<li>
+							<a href="#">TEST PREP</a>
+						</li>
+						<li>
+							<a href="#">PUBLISHING</a>
+						</li>
+						<li>
+							<a href="#">CONTACT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				
+				$(function() {
+					var wall = new freewall("#freewall");
+					wall.reset({
+						selector: '.brick',
+						animate: false,
+						gutterX: 0,
+						gutterY: 0,
+						cellW: 92,
+						cellH: 92,
+						fixSize: 0,
+						onResize: function() {
+							wall.refresh();
+						}
+					});
+			
+					wall.filter(".intro");
+					$(".click").click(function() {
+						$(".click").removeClass("active");
+						var filter = $(this).addClass('active').data('filter');
+						if (filter) {
+							wall.filter(filter);
+						} else {
+							wall.unFilter();
+						}
+					});
+					wall.fitWidth();
+			
+				});
+			</script>
+		</body>
+	</html>
