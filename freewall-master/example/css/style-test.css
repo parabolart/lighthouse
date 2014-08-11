@@ -212,7 +212,6 @@ ul.testmenulist li a:hover {
 #rightcolumn {
 	float: left;
 	width: 230px;
-	height: 600px;
 	margin-left: -230px;
 	background-color: #eee;
 }
@@ -312,4 +311,9 @@ ul.testmenulist li a:hover {
 }
 .tcover {
 	padding: 10px 20px;
+}
+
+#maincontainer h2#break {
+	padding-top: 30px;
+	margin-bottom: 14px;
 }
