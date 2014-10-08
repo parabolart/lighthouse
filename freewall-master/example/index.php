@@ -60,7 +60,7 @@
 			}
 			
 			.brick.centro .cover:hover {
-				background-size: 95% 95%;
+				background-size: 93% 93%;
 				border: 20px;
 			}
 			
@@ -236,6 +236,7 @@
 			}
 			#smlogo {
 				float:left;
+				visibility: hidden;
 			}
 			
 			/* --------- MAIN STUFF --------- */
@@ -268,13 +269,20 @@
 				width: 100%;
 			}
 			#contentcolumn {
-				margin: 0 230px 0 0;
-				height:700px;
+				margin: 0 230px 0 305px;
+				height: 600px;
+			}
+			#leftcolumn {
+				float: left;
+				width: 305px;
+				height: 600px;
+				margin-left: -920px;
+				background-color: #eee;
 			}
 			#rightcolumn {
 				float: left;
 				width: 230px;
-				height:700px;
+				height: 600px;
 				margin-left: -230px;
 				background-color: #eee;
 			}
@@ -288,7 +296,6 @@
 				color: #fff;
 				font-size: 12px;
 			}
-			
 			.innertube {
 				margin: 20px; /*Margins for inner DIV inside each column (to provide padding)*/
 			}
@@ -301,7 +308,7 @@
 			}
 
 			#maincontainer h2#break {
-				padding-top: 30px;
+				padding-top: 10px;
 				margin-bottom: 14px;
 			}
 			
@@ -379,7 +386,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<a href="index.php"><img src="images/lighthouse_logo_sm.png" id="smlogo"></a>
+				<img src="images/lighthouse_logo_sm.png" id="smlogo">
 				<ul id="headbar">
 					<li>
 						<input id="form-submit" name="op" value="" type="submit">
@@ -397,79 +404,237 @@
 		<div class="layout">
 			<div id="logo">
 				<img src="images/social_buttons.png" style="float:right; margin-top: 35px">
-				<a href="index.php"><img src="images/lighthouse_logo.png"></a>
+				<img src="images/lighthouse_logo.png">
 			</div>
-			<ul id="nav">
-				<li>
-					<a href="index.php">HOME</a>
-					
-				</li>
-				<li>
-					<a href="#">ABOUT</a>
-					
-				</li>
-				<li>
-					<a href="#">PROGRAMS</a>
-					<ul>
-						<li><a href="#">Intensive English Speaking</a></li>
-						<li><a href="#">Business English</a></li>
-						<li><a href="#">Advanced Business Training</a></li>
-						<li><a href="#">Global Expo Staff Preparation</a></li>
-						<li><a href="#">More »</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">WORKSHOPS</a>
-					<ul>
-						<li><a href="#">Presentation Essentials</a></li>
-						<li><a href="#">Meeting &amp; Negotiation</a></li>
-						<li><a href="#">Correspondence</a></li>
-						<li><a href="#">Leadership</a></li>
-						<li><a href="#">Team Building</a></li>
-						<li><a href="#">Culture Training</a></li>
-						<li><a href="#">More »</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">TEST PREP</a>
-					<ul>
-						<li><a href="#">BULATS</a></li>
-						<li><a href="#">IELTS</a></li>
-						<li><a href="#">TOEFL</a></li>
-						<li><a href="#">TOEIC</a></li>
-						<li><a href="#">OPIC</a></li>
-						<li><a href="#">OPI</a></li>
-						<li><a href="lap.html">LAP</a></li>
-						<li><a href="#">SAT</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="books.html">PUBLISHING</a>
-				</li>
-				<li>
-					<a href="#">CONTACT</a>
-				</li>
-			</ul>
+			<?php include('nav_default.php'); ?>
 			<div class="spacing"></div>
-			<div  class="free-wall">
-				<img src="images/about_lighthouse.jpg">
+			<div id="freewall" class="free-wall">
+				<div class="brick size11 centro intro toefl">
+					<div class='cover' style='background-image: url("images/toefl.jpg");'>
+						<div class=''>
+							<a href="toefl.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock4.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro centro sat">
+					<div class='cover' style='background-image: url("images/sat.jpg");'>
+						<div class=''>
+							<a href="sat.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro ielts">
+					<div class='cover' data-filter=".ielts" style='background-image: url("images/ielts.jpg");'>
+						<div class=''>
+							<a href="ielts.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock2.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock3.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size22 centro intro">
+					<div class='cover' data-filter=".book" style='background-image: url("images/publishing.jpg");'>
+						<div class=''>
+							<a href="books.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock1.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock9.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro opi">
+					<div class='cover' style='background-image: url("images/opi.jpg");'>
+						<div class=''>
+							<a href="opi.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock7.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro bulats">
+					<div class='cover' style='background-image: url("images/bulats.jpg");'>
+						<div class=''>
+							<a href="bulats.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro toeic">
+					<div class='cover' data-filter=".toeic" style='background-image: url("images/toeic.jpg");'>
+						<div class=''>
+							<a href="toeic.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock10.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro opic">
+					<div class='cover' data-filter=".opic" style='background-image: url("images/opic.jpg");'>
+						<div class=''>
+							<a href="opic.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 centro intro lap">
+					<div class='cover' data-filter=".lap" style='background-image: url("images/lap.jpg");'>
+						<div class=''>
+							<a href="lap.html"><span class="linka"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock11.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock6.jpg");'>
+						<div class=''>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size11 intro">
+					<div class='cover' style='background-image: url("images/stock8.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick size21 intro">
+					<div class='cover' style='background-image: url("images/stock12.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+				<div class="brick sizeINTRO intro" data-position="0-3">
+					<div class='cover' style='background-image: url("images/light_up.jpg");'>
+						<div class='intext'>
+							<h2></h2>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="maincontainer">
 				<div id="topsection">&nbsp;</div>
 				<div id="contentwrapper">
 					<div id="contentcolumn">
-						<div class="innertube"><h2>Our Programs</h2>
-							<p>Our goal at Lighthouse is to provide effective English, Business English, Expo Workshops, 		Engineering, Team Building and Leadership programs that are designed to boost your employee’s confidence when doing international business.</p>
-							<p>Our content developers have designed some of the best programs and workshops in the industry. We also provide solutions tailored specifically to the needs of your business in order to ensure you achieve International success in the global market.</p>
-							<h2 id="break">Our Books</h2>
-							<p>Our books have been designed and tested by ESL educational professionals. Our authors have extensive experience teaching English, and preparing students for international tests. All our books are offer free online lesions for you to follow along just like you were in the class.</p>
-							<h2 id="break">The Lighthouse Commitment</h2>
-							<p>We have an uncommon commitment to creativity that changes behavior...that is talked about...and scares competitors. So much so, that we will move mountains to get the one insight that propels good to great. At Lighthouse, we have created a marriage of passion and curiosity.</p>
-
-							<p><em>“We are anything, but ordinary.”</em></p>
-
-							<p>The quality of an idea depends on the inspired minds that create it. Together, we are continually working to find innovative ways to spark new ideas.</p>
+						<div class="innertube"><h2>Upcoming Programs</h2>
+							<ul id="calendar">
+								<li>
+									<div class="calendar-date">
+										Aug. 1
+									</div>
+									<div class="calendar-info">
+										<a href="#">CONVERSATION CLASS</a><br>
+										Increase your fluency and learn how to speak like a native speaker.
+										Classes begin at the start of every month.
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										Aug. 8
+									</div>
+									<div class="calendar-info">
+										<a href="#">MEETINGS &amp; NEGOTIATIONS</a><br>
+										Learn how to conduct an effective meeting and western negotiation tactics.
+									</div>
+								</li>
+								<li>
+									<div class="calendar-date">
+										Aug. 16
+									</div>
+									<div class="calendar-info">
+										<a href="#">PRESENTATION SKILLS</a><br>
+										Learn how to captivate your audience with effective books and a strong closing.
+										6 week 18 hour presentation program, Saturdays from 9am - 12pm.
+									</div>
+								</li>
+							</ul>
+							<a href="#">View Full Calendar »</a>
 						</div>
+					</div>
+				</div>
+				<div id="leftcolumn">
+					<div class="innertube"><h2>News &amp; Announcements</h2>
+						<ul id="news">
+							<li>
+								<div class="news-title">
+									<a href="#">New Book: BULATS Essentials</a>
+								</div>
+								<div class="news-image">
+									<img src="images/new-bulats.jpg">
+								</div>
+								<div class="news-info">
+									A new book that will guide you through all the hidden secrets of the test and give you tips on how to answer all the questions effectively.
+								</div>
+							</li>
+							<li>
+								<div class="news-title">
+									<a href="#">New Leadership Program</a>
+								</div>
+								<div class="news-image">
+									<img src="images/new-leadership.jpg">
+								</div>
+								<div class="news-info">
+									Designed for executives, this new leadership program covers the fundamentals of effective management and team building skills.
+								</div>
+							</li>
+							<li>
+								<div class="news-title">
+									<a href="#">Present Continuous vs. Present Perfect</a>
+								</div>
+								<div class="news-image">
+									<img src="images/new-video.jpg">
+								</div>
+								<div class="news-info">
+									Learn the differences between the two tenses and when to use them.
+								</div>
+							</li>
+						</ul>
+						<a href="#">View All News »</a>
 					</div>
 				</div>
 				<div id="rightcolumn">
@@ -511,26 +676,26 @@
 				</div>
 				<div id="footer">© 2014 Lighthouse Consulting. 
 					<ul id="footer-nav">
-						<li>
-							<a href="#">ABOUT</a>
-							
-						</li>
-						<li>
-							<a href="#">PROGRAMS</a>
-						</li>
-						<li>
-							<a href="#">WORKSHOPS</a>
-						</li>
-						<li>
-							<a href="#">TEST PREP</a>
-						</li>
-						<li>
-							<a href="#">PUBLISHING</a>
-						</li>
-						<li>
-							<a href="#">CONTACT</a>
-						</li>
-					</ul>
+				<li>
+					<a href="#">ABOUT</a>
+					
+				</li>
+				<li>
+					<a href="#">PROGRAMS</a>
+				</li>
+				<li>
+					<a href="#">WORKSHOPS</a>
+				</li>
+				<li>
+					<a href="#">TEST PREP</a>
+				</li>
+				<li>
+					<a href="#">PUBLISHING</a>
+				</li>
+				<li>
+					<a href="#">CONTACT</a>
+				</li>
+			</ul>
 				</div>
 			</div>
 		</div>
