@@ -586,3 +586,7 @@ div.spacing {
 div.spacingnovid {
 	height: 1px;
 }
+#maincontainer h2#break {
+	padding-top: 30px;
+	margin-bottom: 14px;
+}

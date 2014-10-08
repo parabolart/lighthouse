@@ -286,6 +286,25 @@
 				margin-left: -230px;
 				background-color: #eee;
 			}
+			/*TWO*/
+			#contentcolumn2 {
+				margin: 0 305px 0 305px;
+				height: 300px;
+			}
+			#leftcolumn2 {
+				float: left;
+				width: 305px;
+				height: 300px;
+				margin-left: -920px;
+				background-color: #eee;
+			}
+			#rightcolumn2 {
+				float: left;
+				width: 305px;
+				height: 300px;
+				margin-left: -305px;
+				background-color: #eee;
+			}
 			#footer {
 				clear: left;
 				width: 100%;
@@ -312,11 +331,11 @@
 				margin-bottom: 14px;
 			}
 			
-			#contentcolumn h2 {
+			#contentcolumn h2, #contentcolumn2 h2 {
 				border-bottom: 2px solid #eee;
 			}
 			
-			#leftcolumn h2, #rightcolumn h2 {
+			#leftcolumn h2, #rightcolumn h2, #leftcolumn2 h2, #rightcolumn2 h2 {
 				border-bottom: 2px solid #fff;
 			}
 			
@@ -358,7 +377,7 @@
 			.moreinfo-link {
 				padding-bottom:20px;
 				border-bottom: 1px solid #fff;
-			}	
+			}
 			.testimonial {
 				background: transparent url('images/quote.png') top left no-repeat;
 			}
@@ -560,6 +579,25 @@
 			<div id="maincontainer">
 				<div id="topsection">&nbsp;</div>
 				<div id="contentwrapper">
+					<div id="contentcolumn2">
+						<div class="innertube"><h2>English Programs</h2>
+							Our instructors have actual business experience in the west. Giving you first hand knowledge and expertise in the industry. We are experts in sales, marketing, and a wide range of engineering expertise. Our programs are designed to fit all your needs, and give you the knowledge required to excel in your field.<br><br>
+							
+						</div>
+					</div>
+				</div>
+				<div id="leftcolumn2">
+					<div class="innertube"><h2>Business English Programs</h2>
+						Do you want to emprove your English speaking skills? Or do you need a specific English score for a promotion in your company. Well, we offer a wide range of English programs to meet your needs. Our programs are design by actual English Testers, therefore guaranting your success.<br><br>
+						
+					</div>
+				</div>
+				<div id="rightcolumn2">
+					<div class="innertube"><h2>Communication &amp; Workshops</h2>
+						<p>Our Communication and Expo Workshops are the best in the Industry. We provide Team Building Workshops for new employees or new departments. We have developed some of the best Leadeship Workshops for new managers. Our Expo Workshops will help your employees better understand their products, prepare them for any expo and is guaranteed to bring success.</p>
+					</div>
+				</div>
+				<div id="contentwrapper">
 					<div id="contentcolumn">
 						<div class="innertube"><h2>Upcoming Programs</h2>
 							<ul id="calendar">
@@ -597,6 +635,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div id="leftcolumn">
 					<div class="innertube"><h2>News &amp; Announcements</h2>
 						<ul id="news">
@@ -638,26 +677,48 @@
 					</div>
 				</div>
 				<div id="rightcolumn">
-					<div class="innertube"><h2>More Information</h2>
-						<ul id="moreinfo">
+					<div class="innertube"><h2>Test Preparation</h2>
+						<ul id="moreinfo" style="float:left">
 							<li>
 								<div class="moreinfo-link">
-									<a href="books.html">TESTS »</a>
+									<a href="lap.html">LAP »</a>
 								</div>
 							</li>
 							<li>
 								<div class="moreinfo-link">
-									<a href="#">PROGRAMS »</a>
+									<a href="sat.html">SAT »</a>
 								</div>
 							</li>
 							<li>
 								<div class="moreinfo-link">
-									<a href="#">VIDEOS »</a>
+									<a href="tpefl.html">TOEFL »</a>
 								</div>
 							</li>
 							<li>
 								<div class="moreinfo-link">
-									<a href="#">WORKSHOPS »</a>
+									<a href="toeic.html">TOEIC »</a>
+								</div>
+							</li>
+						</ul>
+						<ul id="moreinfo" style="text-align:right">
+							<li>
+								<div class="moreinfo-link">
+									<a href="bulats.html">BULATS »</a>
+								</div>
+							</li>
+							<li>
+								<div class="moreinfo-link">
+									<a href="ielts.html">IELTS »</a>
+								</div>
+							</li>
+							<li>
+								<div class="moreinfo-link">
+									<a href="opi.html">OPI »</a>
+								</div>
+							</li>
+							<li>
+								<div class="moreinfo-link">
+									<a href="opic.html">OPIc »</a>
 								</div>
 							</li>
 						</ul>

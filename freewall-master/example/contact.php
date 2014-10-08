@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Fixed position block</title>
+		<title>About Lighthouse</title>
 		<meta content="text/html; charset=utf-8" http-equiv="content-type">
 		<meta name="description" content="Fixed position block" />
 		<meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts"/>
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="css/style2.css" />
-		<link rel="stylesheet" type="text/css" href="css/style-test.css" />
- 		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="../freewall.js"></script>
 		<style type="text/css">
 			html, body {
@@ -29,6 +28,7 @@
 			.brick .cover {
 				position:relative;
 				overflow:hidden;
+				vertical-align:middle;
 				background-repeat:no-repeat;
 				background-color:transparent;
 				background-position: center center;
@@ -162,7 +162,7 @@
 			}
 			
 			.sizeVIDEO {
-				background: #d80546;
+				background: #ddd;
 				color: #fff;
 			}
 			
@@ -171,26 +171,22 @@
 			}
 			
 			.sizeINFOL {
-				background: #d80546;
-				color: #fff;
+				background: #fff;
+				color: #000;
 			}
 			
 			.header {
 				height: 28px;
-				background-color: #d80546;
-				color: #fff;
+				background-color: #ffb746;
+				color: #444;
 				font-size: 12px;
 				position: fixed;
 				top:0;
 				width: 100%;
 				z-index: 9999;
-				box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+				/*box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
 				-moz-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
-				-webkit-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
-			}
-
-			.header a {
-				color: #fff;
+				-webkit-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);*/
 			}
 			
 			.header div {
@@ -213,19 +209,19 @@
 			}
 			#search-form {
 				font: 12px 'Lato';
-				background: #b70038;
+				background: #ffe0af;
 				border: medium none;
 				display: inline-block;
 				width: 125px;
 				height: 20px;
 				cursor: pointer;
-				color: #fff;
+				color: #444;
 				padding: 0 8px;
 				margin-top:-2px;
 				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4) inset;
 			}
 			#form-submit {
-				background: url('images/button_search2.png') no-repeat scroll 0px 0px transparent;
+				background: url('images/button_search.png') no-repeat scroll 0px 0px transparent;
 				height: 20px;
 				width: 20px;
 				float:right;
@@ -240,7 +236,6 @@
 			}
 			#smlogo {
 				float:left;
-				/*visibility: hidden;*/
 			}
 			
 			/* --------- MAIN STUFF --------- */
@@ -273,20 +268,13 @@
 				width: 100%;
 			}
 			#contentcolumn {
-				margin: 0 230px 0 345px;
-				height: 600px;
-			}
-			#leftcolumn {
-				float: left;
-				width: 345px;
-				height: 600px;
-				margin-left: -920px;
-				background-color: #eee;
+				margin: 0 230px 0 0;
+				height:700px;
 			}
 			#rightcolumn {
 				float: left;
 				width: 230px;
-				height: 600px;
+				height:700px;
 				margin-left: -230px;
 				background-color: #eee;
 			}
@@ -300,6 +288,7 @@
 				color: #fff;
 				font-size: 12px;
 			}
+			
 			.innertube {
 				margin: 20px; /*Margins for inner DIV inside each column (to provide padding)*/
 			}
@@ -309,6 +298,11 @@
 				font-weight: bold;
 				padding-bottom: 20px;
 				margin-bottom: 24px;
+			}
+
+			#maincontainer h2#break {
+				padding-top: 30px;
+				margin-bottom: 14px;
 			}
 			
 			#contentcolumn h2 {
@@ -324,34 +318,18 @@
 				padding: 0 0 20px 0;
 			}
 			
-			#booklist div.calendar-date {
+			div.calendar-date {
 				display:inline-block;
-				width: 20px;
+				width: 60px;
 				vertical-align: top;
-				padding-right: 10px;
-				border-right: 2px solid #fff;
 			}
 			
-			#booklist div.calendar-info {
-				width: 270px;
+			div.calendar-info {
+				width: 271px;
 				display: inline-block;
-				text-align: right;
 				vertical-align: top;
-			}
-
-			#grammarlist div.calendar-date {
-				display:inline-block;
-				width: 20px;
-				vertical-align: top;
-				padding-right: 10px;
-				border-right: 2px solid #eee;
-			}
-			
-			#grammarlist div.calendar-info {
-				width: 270px;
-				display: inline-block;
-				text-align: right;
-				vertical-align: top;
+				padding-left: 10px;
+				border-left: 1px solid #eee;
 			}
 			
 			.news-title {
@@ -359,35 +337,43 @@
 				padding-bottom: 5px;
 			}
 			.news-image {
-				display:block;
-				width: 190px
+				display:inline-block;
+				width: 60px;
 				vertical-align:top;
-				background: url('images/video_overlay.png') no-repeat top right;
 			}
-			.news-image a {
-				-webkit-transition: opacity .3s ease;
-				-moz-transition: opacity .3s ease;
-				-o-transition: opacity .3s ease;
-				-ms-transition: opacity .3s ease;
-				transition: opacity .3s ease;
-				opacity: 1.0;
-			}
-			.news-image a:hover {
-				opacity: .3;
-			}
-			.video {
-				
-				position: absolute;
-			}
-			.sizeINFOL p {
-				font-size: 12px;
-				line-height: 14px;
-				padding-top: 10px;
-			}
-			.tcover {
-				padding: 10px 20px;
+			.news-info {
+				display:inline-block;
+				width: 191px;
+				vertical-align:top;
+				padding-left: 10px;
 			}
 			
+			.moreinfo-link {
+				padding-bottom:20px;
+				border-bottom: 1px solid #fff;
+			}	
+			.testimonial {
+				background: transparent url('images/quote.png') top left no-repeat;
+			}
+			#testimonial-person {
+				padding: 10px 0 0 10px;
+			}
+
+			span.linka { 
+			  position:absolute; 
+			  width:100%;
+			  height:100%;
+			  top:0;
+			  left: 0;
+
+			  /* edit: added z-index */
+			  z-index: 1;
+
+			  /* edit: fixes overlap error in IE7/8, 
+			     make sure you have an empty gif */
+			  background-image: url('empty.gif');
+			}  
+
 		</style>
 	</head>
 	<body>
@@ -405,143 +391,75 @@
 					<li>
 						<a href="#">REGISTER</a>
 					</li>
-					
 				</ul>
 			</div>
 		</div>
 		<div class="layout">
 			<div id="logo">
 				<img src="images/social_buttons.png" style="float:right; margin-top: 35px">
-				<img src="images/lap_logo.png">
+				<a href="index.php"><img src="images/lighthouse_logo.png"></a>
 			</div>
-			<ul id="nav">
-				<li>
-					<a href="index.php">HOME</a>
-					
-				</li>
-				<li>
-					<a href="#">LESSONS</a>
-					<ul>
-						<li><a href="#">L1 - LAP Outline</a></li>
-						<li><a href="#">L2 - LAP Procedure</a></li>
-						<li><a href="#">L3 - Big Five</a></li>
-						<li><a href="#">L4 - Yourself</a></li>
-						<li><a href="#">L5 - Family</a></li>
-						<li><a href="#">L6 - Hometown</a></li>
-						<li><a href="#">L7 - SOB</a></li>
-						<li><a href="#">L8 - Hobby</a></li>
-						<li><a href="#">L9 - Rejoinders</a></li>
-						<li><a href="#">L10 - P.R.E.P</a></li>
-						<li><a href="#">L11 - Guiding</a></li>
-						<li><a href="#">L12 - Related Topics</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">CLASSES</a>
-					<ul>
-						<li><a href="#">Intensive English Speaking</a></li>
-						<li><a href="#">Business English</a></li>
-						<li><a href="#">Advanced Business Training</a></li>
-						<li><a href="#">Global Expo Staff Preparation</a></li>
-						<li><a href="#">More »</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">INTENSIVE PROGRAMS</a>
-					<ul>
-						<li><a href="#">Presentation Essentials</a></li>
-						<li><a href="#">Meeting &amp; Negotiation</a></li>
-						<li><a href="#">Correspondence</a></li>
-						<li><a href="#">Leadership</a></li>
-						<li><a href="#">Team Building</a></li>
-						<li><a href="#">Culture Training</a></li>
-						<li><a href="#">More »</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">QUESTIONS</a>
-				</li>
-				<li>
-					<a href="lap_test.html">TESTING</a>
-				</li>
-			</ul>
-			<div class="spacingnovid"></div>
+			<?php include('nav_default.php'); ?>
+			<div class="spacing"></div>
+			<div  class="free-wall">
+				<img src="images/contact.jpg">
+			</div>
 			<div id="maincontainer">
 				<div id="topsection">&nbsp;</div>
 				<div id="contentwrapper">
-					<div id="contentcolumnt">
-						<div class="innertube"><h2 id="break">LAP Test Preparation</h2>
-							<p>Join our LAP Expert in one of our specially designed classes to help reach your desired LAP goal. We offer weekday evening and weekend classes to fit your busy work schedule. Please ask about our morning classes. We look forward to working with you to reach your goals.</p>
-							<h2 id="break">About the Book</h2>
+					<div id="contentcolumn">
+						<div class="innertube"><h2>Contact Lighthouse</h2>
+							<p>We’re an energetic, flexible, and open-minded team ready to work hard for our clients. If you’re interested in working with us, please send us a message.</p>
 
-							<p><img src="covers/covers-LAP4.jpg" width="100" style="float:left; padding-right: 15px">Our book has been design and tested from our IN-House specialist. The book covers all parts of the test. Offering tips, example questions and answers, and sample tests to ensure your score. <br><br><br><br><br></p>
-							<h2 id="break">About the Instructor</h2>
-							
-							<p><img src="images/instructors/Paul.jpg" height="150" style="float:left; padding-right: 15px">Paul G. Kuhlmeijer has been teaching English and Business English in South Korea since 2005. He teaches for some of the largest companies in South Korea, such as Hyundai, Samsung, LG, and Daewoo. He is currently the head instructor at LG Chem. He has his TESOL certificate, his Certificate of Teaching Business English (CTBE), and is a certified BULATS Speaking Examiner for Cambridge University.</p>
+							<h2 id="break">Program Director</h2>
+							<p><b>Paul G. Kuhlmeijer</b><br>010-8863-9904<br>lighthousepgk@gmail.com</p>
+
+							<h2 id="break">Planning Team Director</h2>
+							<p><b>Kyunguk Lee</b><br>010-4468-3000<br>krisleecafe@gmail.com</p>
+
+							<h2 id="break">Address</h2>
+							<p>서울중구 32-남사타운앞아트</p>
 						</div>
 					</div>
 				</div>
-				<div id="rightcolumnt">
-					<div class="innertube"><h2 id="break">On-Going Weekday Class Timetable</h2>
-						<ul id="testinfo">
-							<li><u>Weekday (Monday &amp; Wednesday) LAP Class</u><br>12 Hours a Month - Total of 8 Classes</li>
+				<div id="rightcolumn">
+					<div class="innertube"><h2>More Information</h2>
+						<ul id="moreinfo">
 							<li>
-								<div class="calendar-date">
-									Monday &amp; Wednesday
-								</div>
-								<div class="calendar-info">
-									BEGINNER CLASS<br><b>7:00 - 8:30</b>
+								<div class="moreinfo-link">
+									<a href="books.html">TESTS »</a>
 								</div>
 							</li>
 							<li>
-								<div class="calendar-date">
-									Monday &amp; Wednesday
-								</div>
-								<div class="calendar-info">
-									INTERMEDIATE CLASS<br><b>8:30 - 10:00</b>
-								</div>
-							</li><br>
-							<li><u>Weekday (Tuesday &amp; Thursday) LAP Class</u><br>12 Hours a Month - Total of 8 Classes</li>
-							<li>
-								<div class="calendar-date">
-									Tuesday &amp; Thursday
-								</div>
-								<div class="calendar-info">
-									BEGINNER CLASS<br><b>7:00 - 8:30</b>
+								<div class="moreinfo-link">
+									<a href="workshops.php">PROGRAMS »</a>
 								</div>
 							</li>
 							<li>
-								<div class="calendar-date">
-									Tuesday &amp; Thursday
-								</div>
-								<div class="calendar-info">
-									INTERMEDIATE CLASS<br><b>8:30 - 10:00</b>
-								</div>
-							</li><br>
-							<li><u>Weekend Conversation Class</u><br>12 Hours a Month - Total of 4 Classes</li>
-							<li>
-								<div class="calendar-date">
-									Saturday Morning
-								</div>
-								<div class="calendar-info">
-									BEGINNER / INTERMEDIATE<br><b>9:00 - 12:00</b>
+								<div class="moreinfo-link">
+									<a href="#">VIDEOS »</a>
 								</div>
 							</li>
 							<li>
-								<div class="calendar-date">
-									Saturday Afternoon
-								</div>
-								<div class="calendar-info">
-									BEGINNER / INTERMEDIATE<br><b>1:00 - 4:00</b>
+								<div class="moreinfo-link">
+									<a href="workshops.php">WORKSHOPS »</a>
 								</div>
 							</li>
-						</ul><br>
-						Please ask about our advanced classes, business skills, and other Special programs
-
+						</ul>
+						<h2 id="break">Testimonial</h2>
+						<ul class="testimonial">
+							<li>
+								<div>
+									<em>“The 3 Day Presenatation program was an excellent way for me to understand the difference between Asian and Western presentation culture.”</em>
+								</div>
+								<div id="testimonial-person">
+									<b>Tae Hyun Kim</b><br>International Sales Department 
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<div id="footer">
-					© 2014 Lighthouse Consulting. 
+				<div id="footer">© 2014 Lighthouse Consulting. 
 					<ul id="footer-nav">
 						<li>
 							<a href="#">ABOUT</a>
@@ -565,36 +483,37 @@
 					</ul>
 				</div>
 			</div>
-			<script type="text/javascript">
-				
-				$(function() {
-					var wall = new freewall("#freewall");
-					wall.reset({
-						selector: '.brick',
-						animate: false,
-						gutterX: 0,
-						gutterY: 0,
-						cellW: 92,
-						cellH: 92,
-						fixSize: 0,
-						onResize: function() {
-							wall.refresh();
-						}
-					});
+		</div>
+		<script type="text/javascript">
 			
-					wall.filter(".intro");
-					$(".click").click(function() {
-						$(".click").removeClass("active");
-						var filter = $(this).addClass('active').data('filter');
-						if (filter) {
-							wall.filter(filter);
-						} else {
-							wall.unFilter();
-						}
-					});
-					wall.fitWidth();
-			
+			$(function() {
+				var wall = new freewall("#freewall");
+				wall.reset({
+					selector: '.brick',
+					animate: false,
+					gutterX: 0,
+					gutterY: 0,
+					cellW: 92,
+					cellH: 92,
+					fixSize: 0,
+					onResize: function() {
+						wall.refresh();
+					}
 				});
-			</script>
-		</body>
-	</html>
+		
+				wall.filter(".intro");
+				$(".link").click(function() {
+					$(".link").removeClass("active");
+					var filter = $(this).addClass('active').data('filter');
+					if (filter) {
+						wall.filter(filter);
+					} else {
+						wall.unFilter();
+					}
+				});
+				wall.fitWidth();
+		
+			});
+		</script>
+	</body>
+</html>

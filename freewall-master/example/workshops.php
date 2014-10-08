@@ -259,10 +259,12 @@
 				height: 44px; /*Height of top section*/
 				border-bottom: 1px solid #ddd;
 				padding-bottom: 10px;
+				
 			}
 			#topsection h1 {
 				margin: 0;
 				padding-top: 15px;
+				font-weight: bold;
 			}
 			#contentwrapper {
 				float: left;
@@ -408,43 +410,80 @@
 			<?php include('nav_default.php'); ?>
 			<div class="spacing"></div>
 			<div  class="free-wall">
-				<img src="images/book_publishing.jpg">
+
 			</div>
 			<div id="maincontainer">
-				<div id="topsection"><h2><br>Interactive Learning Books</h2></div>
+				<div id="topsection"><h1>Workshops</h1></div>
+				<div><p>Lighthouse Consulting offers a wide range of programs and workshops to help your company perform on the international stage. We offer English and Business English programs. We have designed some outstanding and creativity Team Bulding and Leadership workshops. We also have some fantastic Expo workshops to prepare employees to be sucessfully in the international market.</p></div>
 				<div id="contentwrapper">
 					<div id="contentcolumn">
 						<div class="innertube">
-							<img src="covers/covers-BULATS.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-LAP4.jpg" width="265">
-							<a href="lap.html">More Info »</a>
-							<br><br>
-							<img src="covers/covers-SAT.jpg" width="265">
-							<a href="#">More Info »</a>
+							<h2>Intensive English Speaking Program<br><br><img src="images/pages/workshop1.png" width="265"></h2><b>4 week Intensive English Program</b>
+							<p><b>Objective:</b> To improve overall English speaking ability. Participates in this program will advance one sub-level within their level. For example, a novice high would move to an intermediate low level.</p>
+							<p><b>Global Tasks:</b> Please refer our Assessment Speaking Criteria.</p>
+							<p><b>Course Requirements:</b> This program is adaptable for novice and intermediate level English speakers. The material is alternated pending the level.</p>
+
+							<h2 id="break">Presentation Essentials Workshop<br><br><img src="images/pages/workshop4.png" width="265"></h2><b>3 Day Intensive Presentation Skills Program</b>
+							<p><b>Objective:</b> To prepare students to make successful presentations according to International standards.</p>
+							<p><b>Global Tasks:</b> Students will be able to successfully deliver a presentation based on their job, product, or service.</p>
+							<p><b>Course Requirements:</b> Intermediate English Proficiency Level or Successful completion of IES Program.</p>
+
+							<h2 id="break">Leadership Workshop<br><br><img src="images/pages/workshop7.png" width="265"></h2><b>3 Day Effective Management Workshop</b>
+							<p><b>Objective:</b> To prepare managers to with the necessary skills, knowledge and techniques to organize  their team for success.</p>
+							<p><b>Global Tasks:</b> Managers will be able to successfully be able to understand what drives and motivates their team, how to create and environment where the entire team is involved in the processes . The manager will create a foundation for real teamwork by helping their staff understand their roles and the purpose of the project.</p>
+							<p><b>Course Requirements:</b> Intermediate English Proficiency Level or Successful completion of IES   Program.</p>
+
+							<h2 id="break">COEX Expo<br><br><img src="images/pages/workshop10.png" width="265"></h2><b>5 Day Business English &amp; Business Skills Presenation Workshop</b>
+							<p><b>Objective:</b> This workshop is designed to improve employees English skills, business skills, and give employees the opportunity to discuss and present a product process or service in relationship to their job.</p>
+							<p><b>Global Tasks:</b> Employees will be able to use business language and discuss daily work routines. They will learn the necessary skills to write emails, make a presentation, conduct a meeting and learn negotiation skills.</p>
+							<p><b>Course Requirements:</b> Intermediate high English Proficiency Level or Successful completion of BE Program</p>
 						</div>
 					</div>
 				</div>
 				<div id="leftcolumn">
-					<div class="innertube">
-							<img src="covers/covers-TOEFL.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-TOEIC.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-IELTS.jpg" width="265">
-							<a href="#">More Info »</a>
+					<div class="innertube">						
+							<h2>Business English Program<br><br><img src="images/pages/workshop2.png" width="265"></h2><b>4 week Business Skill Program</b>
+							<p><b>Objective:</b> To improve overall English speaking ability to successfully perform in a Business Environment.</p>
+							<p><b>Global Tasks:</b> Participates will be able to describe their company, their company organization, products, and business performance. As well as giving opinions and predictions, discussing processes and procedures and reporting on progress. They will also be able to suggest requirements, compare and outline plans and schedules.</p>
+							<p><b>Course Requirements:</b> This program is most suitable for intermediate level English speakers or participates who have completed the IESP.</p>
+
+							<h2 id="break">Meeting &amp; Negotiation Workshop<br><br><img src="images/pages/workshop5.png" width="265"></h2><b>3 Day Intensive Business Skills</b>
+							<p><b>Objective:</b> To prepare employees to successfully conduct effective meetings and learn western negotiation tactics, language and strategies.</p>
+							<p><b>Global Tasks:</b> Employees will be able to effectively conduct a meeting and negotiation in English. As well as understand the cultural differences between east and west.</p>
+							<p><b>Course Requirements:</b> Intermediate English Proficiency Level or Successful completion of IES Program.</p>
+
+							<h2 id="break">Team Building Workshop<br><br><img src="images/pages/workshop8.png" width="265"></h2><b>3 Day Effective Communication Workshop</b>
+							<p><b>Objective:</b> To prepare new employees to with the necessary understand and skills to work successfully within a team, to develop new relationships that will last a lifetime, and trust their fellow coworkers.</p>
+							<p><b>Global Tasks:</b> New employees will go through a series of structured and stimulating exercises , and conversations with fellow coworkers to prepare them for their new job or team and successfully work effectively within their new team.</p>
+							<p><b>Course Requirements:</b> No requirements.</p>
+
+							<h2 id="break">Knowledge Expo<br><br><img src="images/pages/workshop11.png" width="265"></h2><b>5 Day Information Share Expo</b>
+							<p><b>Objective:</b> Employees will have the opportunity to present and share their products, processes and services. This workshop is designed to allow all members to better understand the final product or service, and to create and easier work flow within the company.</p>
+							<p><b>Global Tasks:</b> This workshop allows employees to share their products, processes, knowledge, difficulties, and strengths &amp; weaknesses with other members of the company.</p>
+							<p><b>Course Requirements:</b> Intermediate high English Proficiency Level or Successful completion of IESP/BE Program.</p>
 						</div>
 				</div>
 				<div id="rightcolumn">
 					<div class="innertube">
-							<img src="covers/covers-OPI.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-OPIc.jpg" width="265">
-							<a href="#">More Info »</a>
+							<h2>Advanced Business Training Program<br><br><img src="images/pages/workshop3.png" width="265"></h2><b>2 Week Business Skills Program</b>
+							<p><b>Objective:</b> To prepare students for real life business situations in the international market.</p>
+							<p><b>Global Tasks:</b> Upon successful completion of this program students will be able to make telephone calls, write emails, conduct meetings and negotiations, and make presentations in English, and understand the western culture of business.</p>
+							<p><b>Course Requirements:</b> Intermediate High English Proficiency Level or Successful completion of The BE Program.</p>
+
+							<h2 id="break">Correspondence Workshop<br><br><img src="images/pages/workshop6.png" width="265"></h2><b>3 Day Email and Telephoning Workshop</b>
+							<p><b>Objective:</b> To prepare students with the necessary language and techniques to correspond and make telephone calls with International clients.</p>
+							<p><b>Global Tasks:</b> Students will be able to successfully write emails and make phone calls based on a variety of different business situations.</p>
+							<p><b>Course Requirements:</b> Intermediate English Proficiency Level or Successful completion of IES Program.</p>
+
+							<h2 id="break">ESP Expo<br><br><img src="images/pages/workshop9.png" width="265"></h2><b>5 Day English Speaking and Presentation Expo Workshop</b>
+							<p><b>Objective:</b> This workshop is designed to improve employees English skills, and teach employees the fundamentals of a good presentation. Employees will also have the opportunity to discuss and present a product process or service in relationship to their job.</p>
+							<p><b>Global Tasks:</b> Employees will be able to discuss daily routines, talk about their jobs, give short speeches. They will also learn the necessary skills to make a presentation.</p>
+							<p><b>Course Requirements:</b> Intermediate Low English Proficiency Level</p>
+
+							<h2 id="break">Global Expo Staff Preparation Program<br><br><img src="images/pages/workshop12.png" width="265"></h2><b>5 Day Preparation and Training for Overseas or International Expos</b>
+							<p><b>Objective:</b> To prepare company employees with the necessary skills, language, knowledge and techniques to prepare and succeed at an international expo.</p>
+							<p><b>Global Tasks:</b> Employees will be able to establish pre show strategies and tactics, prepare ROI and goals, learn best and worst booth practices, learn how to successfully perform post-show follow-ups and emails, and handle Q&amp;A from visitors.</p>
+							<p><b>Course Requirements:</b> Intermediate high English Proficiency Level or Successful completion of BE Program.</p>
 						</div>
 				</div>
 				<div id="footer">© 2014 Lighthouse Consulting. 

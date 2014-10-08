@@ -258,7 +258,7 @@
 			#topsection {
 				height: 44px; /*Height of top section*/
 				border-bottom: 1px solid #ddd;
-				padding-bottom: 10px;
+				
 			}
 			#topsection h1 {
 				margin: 0;
@@ -408,43 +408,36 @@
 			<?php include('nav_default.php'); ?>
 			<div class="spacing"></div>
 			<div  class="free-wall">
-				<img src="images/book_publishing.jpg">
+				<img src="images/services.jpg">
 			</div>
 			<div id="maincontainer">
-				<div id="topsection"><h2><br>Interactive Learning Books</h2></div>
+				<div id="topsection"></div>
 				<div id="contentwrapper">
 					<div id="contentcolumn">
 						<div class="innertube">
-							<img src="covers/covers-BULATS.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-LAP4.jpg" width="265">
-							<a href="lap.html">More Info »</a>
-							<br><br>
-							<img src="covers/covers-SAT.jpg" width="265">
-							<a href="#">More Info »</a>
+							<h2>Intensive Programs &amp; Workshops</h2>
+							<p>Our Intensive Programs and Workshops are the leader in the market.</p>
+							<p>With over 2 years of Reasearch and Development our programs are guaranteed to meet your needs and your goals. We have over 40 years of experience within our team.</p>
+							<p>We bring deep, functional expertise, but are known for our fun approach to hard work and study. We love what we do and we love bringing our expertise and success to our clients.</p>
+							<img src="images/pages/services.png" width="265">
 						</div>
 					</div>
 				</div>
 				<div id="leftcolumn">
 					<div class="innertube">
-							<img src="covers/covers-TOEFL.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-TOEIC.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-IELTS.jpg" width="265">
-							<a href="#">More Info »</a>
+							<img src="images/pages/services2.png" width="265">
+							<h2>In-house &amp; Executive 1:1 Classes</h2>
+							<p>Lighthouse is a different type of language consulting service. We have some of the best industry experts and offer unique access to your industries trends. We develop our programs around your business.</p>
+							<p>Our In-house programs and Executive classes are innovative and brave, while at the same time being based on your industry language and key objectives to meet your desired needs for success.</p>
 						</div>
 				</div>
 				<div id="rightcolumn">
 					<div class="innertube">
-							<img src="covers/covers-OPI.jpg" width="265">
-							<a href="#">More Info »</a>
-							<br><br>
-							<img src="covers/covers-OPIc.jpg" width="265">
-							<a href="#">More Info »</a>
+							<img src="images/pages/services3.png" width="265">
+							<h2>Language Testing</h2>
+							<p>We at Lighthouse are trained and certified Language testers and evaluators.</p>
+							<p>We have instructors that are Certified from Cambridge University to conduct BULATS Language Testing. We also have instructors who are Certified from ACTFL to conduct OPI Language Testing.</p>
+ 							<p>After conducting a International Language Assessment we will know which program is best for your emplyoees.</p>
 						</div>
 				</div>
 				<div id="footer">© 2014 Lighthouse Consulting. 
