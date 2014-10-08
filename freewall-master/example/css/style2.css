@@ -582,3 +582,7 @@ table {
 div.spacing {
 	height: 70px;
 }
+
+div.spacingnovid {
+	height: 1px;
+}

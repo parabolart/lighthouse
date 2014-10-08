@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fixed position block</title>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type">
+		<meta name="description" content="Fixed position block" />
+		<meta name="keywords" content="javascript, dynamic, grid, layout, jquery plugin, flex layouts"/>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<link rel="stylesheet" type="text/css" href="css/style-test.css" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../freewall.js"></script>
+		<style type="text/css">
+			
+			.sizeVIDEO {
+				background: #34b372;
+				color: #fff;
+			}
+			
+			.sizeVIDEO .vcover {
+				padding: 4px 0 0 4px;
+			}
+			
+			.sizeINFOL {
+				background: #34b372;
+				color: #fff;
+			}
+			
+			.header {
+				height: 28px;
+				background-color: #34b372;
+				color: #fff;
+				font-size: 12px;
+				position: fixed;
+				top:0;
+				width: 100%;
+				z-index: 9999;
+				box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+				-moz-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+				-webkit-box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, .9);
+			}
+
+			.header a {
+				color: #fff;
+			}
+			
+			#search-form {
+				font: 12px 'Lato';
+				background: #28915B;
+				border: medium none;
+				display: inline-block;
+				width: 125px;
+				height: 20px;
+				cursor: pointer;
+				color: #fff;
+				padding: 0 8px;
+				margin-top:-2px;
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4) inset;
+			}
+			#form-submit {
+				background: url('images/button_search2.png') no-repeat scroll 0px 0px transparent;
+				height: 20px;
+				width: 20px;
+				float:right;
+				display:block;
+				margin-top:-1px;
+				border:0 !important;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div>
+				<a href="index.php"><img src="images/lighthouse_logo_sm.png" id="smlogo"></a>
+				<ul id="headbar">
+					<li>
+						<input id="form-submit" name="op" value="" type="submit">
+						<input onfocus="if (this.value == 'SEARCH') {this.value = '';}" onblur="if (this.value == '') {this.value = 'SEARCH'}" id="search-form" name="search_block_form" value="SEARCH" size="60" maxlength="128" class="form-text" type="text">
+					</li>
+					<li>
+						<a href="#">LOGIN »</a>
+					</li>
+					<li>
+						<a href="#">REGISTER</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="layout">
+			<div id="logo">
+				<img src="images/social_buttons.png" style="float:right; margin-top: 35px">
+				<img src="images/toeic_logo.png">
+			</div>
+			<ul id="nav">
+				<li>
+					<a href="index.php">HOME</a>
+					
+				</li>
+				<li>
+					<a href="#">LESSONS</a>
+					<ul>
+						<li><a href="#">L1 - LAP Outline</a></li>
+						<li><a href="#">L2 - LAP Procedure</a></li>
+						<li><a href="#">L3 - Big Five</a></li>
+						<li><a href="#">L4 - Yourself</a></li>
+						<li><a href="#">L5 - Family</a></li>
+						<li><a href="#">L6 - Hometown</a></li>
+						<li><a href="#">L7 - SOB</a></li>
+						<li><a href="#">L8 - Hobby</a></li>
+						<li><a href="#">L9 - Rejoinders</a></li>
+						<li><a href="#">L10 - P.R.E.P</a></li>
+						<li><a href="#">L11 - Guiding</a></li>
+						<li><a href="#">L12 - Related Topics</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">CLASSES</a>
+					<ul>
+						<li><a href="#">Intensive English Speaking</a></li>
+						<li><a href="#">Business English</a></li>
+						<li><a href="#">Advanced Business Training</a></li>
+						<li><a href="#">Global Expo Staff Preparation</a></li>
+						<li><a href="#">More »</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">INTENSIVE PROGRAMS</a>
+					<ul>
+						<li><a href="#">Presentation Essentials</a></li>
+						<li><a href="#">Meeting &amp; Negotiation</a></li>
+						<li><a href="#">Correspondence</a></li>
+						<li><a href="#">Leadership</a></li>
+						<li><a href="#">Team Building</a></li>
+						<li><a href="#">Culture Training</a></li>
+						<li><a href="#">More »</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">QUESTIONS</a>
+				</li>
+				<li>
+					<a href="#">TESTING</a>
+				</li>
+			</ul>
+			<div class="spacingnovid"></div>
+			<div id="maincontainer">
+				<div id="topsection">&nbsp;</div>
+				<div id="contentwrapper">
+					<div id="contentcolumnt">
+						<div class="innertube"><h2 id="break">TOEIC Test Preparation</h2>
+							<p>Join our TOEIC Expert in one of our specially designed classes to help reach your desired TOEIC goal. We offer weekday evening and weekend classes to fit your busy work schedule. Please ask about our morning classes. We look forward to working with you to reach your goals.</p>
+							<h2 id="break">About the Book</h2>
+
+							<p><img src="covers/covers-TOEIC.jpg" width="100" style="float:left; padding-right: 15px">Our book has been design and tested from our IN-House specialist. The book covers all parts of the test. Offering tips, example questions and answers, and sample tests to ensure your score. <br><br><br><br><br></p>
+							<h2 id="break">About the Instructor</h2>
+							
+							<p><img src="images/instructors/John.jpg" height="120" style="float:left; padding-right: 15px">John has 15 years corporate experience in Korea and Japan with Fortune 500 companies most recently as a Business Instructor for General Motors Korea and a Global Communication Facilitator for LG Electronics. Interview, presentation, meeting and negotiation language specialist. Masters Degree in Applied Linguistics with research into linguistic pragmatics for effective corporate and media communication.</p>
+						</div>
+					</div>
+				</div>
+				<div id="rightcolumnt">
+					<div class="innertube"><h2 id="break">On-Going Weekday Class Timetable</h2>
+						<ul id="testinfo">
+							<li><u>Weekday (Monday &amp; Wednesday) TOEIC Class</u><br>12 Hours a Month - Total of 8 Classes</li>
+							<li>
+								<div class="calendar-date">
+									Monday &amp; Wednesday
+								</div>
+								<div class="calendar-info">
+									BEGINNER CLASS<br><b>7:00 - 8:30</b>
+								</div>
+							</li>
+							<li>
+								<div class="calendar-date">
+									Monday &amp; Wednesday
+								</div>
+								<div class="calendar-info">
+									INTERMEDIATE CLASS<br><b>8:30 - 10:00</b>
+								</div>
+							</li><br>
+							<li><u>Weekday (Tuesday &amp; Thursday) TOEIC Class</u><br>12 Hours a Month - Total of 8 Classes</li>
+							<li>
+								<div class="calendar-date">
+									Tuesday &amp; Thursday
+								</div>
+								<div class="calendar-info">
+									BEGINNER CLASS<br><b>7:00 - 8:30</b>
+								</div>
+							</li>
+							<li>
+								<div class="calendar-date">
+									Tuesday &amp; Thursday
+								</div>
+								<div class="calendar-info">
+									INTERMEDIATE CLASS<br><b>8:30 - 10:00</b>
+								</div>
+							</li><br>
+							<li><u>Weekend Conversation Class</u><br>12 Hours a Month - Total of 4 Classes</li>
+							<li>
+								<div class="calendar-date">
+									Saturday Morning
+								</div>
+								<div class="calendar-info">
+									BEGINNER / INTERMEDIATE<br><b>9:00 - 12:00</b>
+								</div>
+							</li>
+							<li>
+								<div class="calendar-date">
+									Saturday Afternoon
+								</div>
+								<div class="calendar-info">
+									BEGINNER / INTERMEDIATE<br><b>1:00 - 4:00</b>
+								</div>
+							</li>
+						</ul><br>
+						Please ask about our advanced classes, business skills, and other Special programs
+
+					</div>
+				</div>
+				<div id="footer">
+					© 2014 Lighthouse Consulting. 
+					<ul id="footer-nav">
+						<li>
+							<a href="#">ABOUT</a>
+							
+						</li>
+						<li>
+							<a href="#">PROGRAMS</a>
+						</li>
+						<li>
+							<a href="#">WORKSHOPS</a>
+						</li>
+						<li>
+							<a href="#">TEST PREP</a>
+						</li>
+						<li>
+							<a href="#">PUBLISHING</a>
+						</li>
+						<li>
+							<a href="#">CONTACT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				
+				$(function() {
+					var wall = new freewall("#freewall");
+					wall.reset({
+						selector: '.brick',
+						animate: false,
+						gutterX: 0,
+						gutterY: 0,
+						cellW: 92,
+						cellH: 92,
+						fixSize: 0,
+						onResize: function() {
+							wall.refresh();
+						}
+					});
+			
+					wall.filter(".intro");
+					$(".click").click(function() {
+						$(".click").removeClass("active");
+						var filter = $(this).addClass('active').data('filter');
+						if (filter) {
+							wall.filter(filter);
+						} else {
+							wall.unFilter();
+						}
+					});
+					wall.fitWidth();
+			
+				});
+			</script>
+		</body>
+	</html>
