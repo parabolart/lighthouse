@@ -603,7 +603,7 @@
 							<ul id="calendar">
 								<li>
 									<div class="calendar-date">
-										Aug. 1
+										Jan. 5
 									</div>
 									<div class="calendar-info">
 										<a href="#">CONVERSATION CLASS</a><br>
@@ -613,7 +613,7 @@
 								</li>
 								<li>
 									<div class="calendar-date">
-										Aug. 8
+										Jan. 10
 									</div>
 									<div class="calendar-info">
 										<a href="#">MEETINGS &amp; NEGOTIATIONS</a><br>
@@ -622,7 +622,7 @@
 								</li>
 								<li>
 									<div class="calendar-date">
-										Aug. 16
+										Jan. 17
 									</div>
 									<div class="calendar-info">
 										<a href="#">PRESENTATION SKILLS</a><br>
